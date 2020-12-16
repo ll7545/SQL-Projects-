@@ -1,0 +1,5 @@
+Select Students.name, Grades.Grade, Students.Mark
+From Students 
+INNER JOIN Grades ON Student.Marks BETWEEN Grades.Min_Mark AND Grades.Max_Mark 
+WHERE Grades.Grade <= 7 
+ORDER BY Grades.Grade DESC;

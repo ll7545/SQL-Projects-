@@ -1,0 +1,9 @@
+#Create a report that returns a list of all country names (in English), together with the number of related cities we have in the database. 
+#You need to show all countries as well as give a reasonable name to the aggregate column. Order the result by country name ascending.
+
+
+SELECT country.country_name_eng, COUNT(city.id) AS related_cities
+FROM country
+LEFT JOIN city ON country.id = city.country_id
+GROUP BY country.id, country.country_name_eng
+ORDER BY country.country_name_eng ASC;
